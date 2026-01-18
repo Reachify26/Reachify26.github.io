@@ -136,54 +136,20 @@ formInputs.forEach(input => {
         }
     });
 });
-
-// Form submission
+// Form submission (allow Formspree to submit)
 businessForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
     let isFormValid = true;
-    const formData = {};
 
-    // Validate all required fields
     formInputs.forEach(input => {
-        formData[input.name] = input.value;
         if (!validateField(input)) {
             isFormValid = false;
         }
     });
 
-    if (isFormValid) {
-        // Here you would typically send the data to a server
-        // For now, we'll just show a success message
-        console.log('Form Data:', formData);
-        
-        // Show success message
-        formSuccess.style.display = 'block';
-        businessForm.reset();
-        
-        // Reset border colors
-        formInputs.forEach(input => {
-            input.style.borderColor = '#e5e7eb';
-        });
-
-        // Hide success message after 5 seconds
-        setTimeout(() => {
-            formSuccess.style.display = 'none';
-        }, 5000);
-
-        // Scroll to success message
-        formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    } else {
-        // Focus on first invalid field
-        formInputs.forEach(input => {
-            if (!validateField(input) && isFormValid !== false) {
-                input.focus();
-                isFormValid = false;
-            }
-        });
+    if (!isFormValid) {
+        e.preventDefault(); // block submit only if invalid
     }
 });
-
 // Particle Animation Enhancement (if needed)
 function createParticle() {
     const particles = document.querySelectorAll('.particle');

@@ -39,7 +39,7 @@ That's it! No build process or dependencies required.
 
 ### Using a Local Server (Recommended)
 
-For the best experience, especially when testing form submissions, use a local server:
+For the best experience when developing locally, a local server is recommended.
 
 **Using Python:**
 ```bash
@@ -91,22 +91,6 @@ Add or modify projects in the `.projects-grid`:
 - Modify technology tags
 - Update project links (replace `#` with actual project URLs)
 - Add project images by replacing the `.project-placeholder` div
-
-
-
-### Business Section
-
-1. **Business Description**:
-   - Update the heading and description text
-   - Modify feature items to match your services
-   - Update icons and descriptions for each feature
-
-2. **Contact Form**:
-   - To make the form functional, you'll need to integrate it with a backend service or email service like:
-     - Formspree
-     - EmailJS
-     - Custom backend API
-   - Update the form submission handler in `script.js` to send data to your service
 
 ### Colors and Styling
 
@@ -186,28 +170,24 @@ Portfolio/
 - Edge (latest)
 - Mobile browsers (iOS Safari, Chrome Mobile)
 
-## Making the Contact Form Functional
+## Contact Form (Formspree)
+The contact form on this website is fully functional and powered by **Formspree**.
 
-Currently, the form shows a success message but doesn't actually send emails. To make it functional:
+### How it works
+- The form submits directly to Formspree using a standard HTML POST request
+- No JavaScript email handling is required
+- Formspree delivers messages to the configured email address
 
-### Option 1: Using EmailJS (Easy)
+### Configuration
+The form is connected using the following markup in `index.html`:
 
-1. Sign up at [EmailJS](https://www.emailjs.com/)
-2. Create an email service
-3. Get your Service ID, Template ID, and Public Key
-4. Add EmailJS script to `index.html`:
 ```html
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-```
-5. Update the form submission in `script.js` to use EmailJS API
-
-### Option 2: Using Formspree (Easy)
-
-1. Sign up at [Formspree](https://formspree.io/)
-2. Create a form and get the form action URL
-3. Update the form tag in `index.html`:
-```html
-<form id="business-form" class="business-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+<form
+  id="business-form"
+  class="business-form"
+  action="https://formspree.io/f/xreeprqe"
+  method="POST"
+>
 ```
 
 ### Option 3: Custom Backend

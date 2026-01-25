@@ -254,7 +254,9 @@ const contentData = {
         posts: [
             { image: 'images/Main Image.webp', alt: 'Visual Post 1' },
             { image: 'images/Main Image.webp', alt: 'Visual Post 2' },
-            { image: 'images/Main Image.webp', alt: 'Visual Post 3' }
+            { image: 'images/Main Image.webp', alt: 'Visual Post 3' },
+            { image: 'images/cafeproductpackaging.jpg', alt: 'Visual Post 4' },
+            { image: 'images/cafe23', alt: 'Visual Post 5' }
             // To add more posts, add a comma after the last entry above,
             // then add new lines like this:
             // { image: 'images/your-image-name.jpg', alt: 'Visual Post 4' },
